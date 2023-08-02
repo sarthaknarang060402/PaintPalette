@@ -1,4 +1,8 @@
 # PaintPallete
+A project for recreation of your art through paint !
+
+TechStack Used:
+HTML, CSS , JS
 
 Functionalities:
 1. User can Draw.
