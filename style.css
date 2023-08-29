@@ -132,7 +132,7 @@ body {
   background: rgb(47, 47, 47);
 }
 
-/* JS Color */
+/* JS Color
 .jscolor {
   border-style: solid;
   border-radius: 5px;
@@ -142,7 +142,7 @@ body {
   text-align: center;
   cursor: pointer;
   outline: none;
-}
+} */
 
 /* Canvas */
 canvas#canvas {
