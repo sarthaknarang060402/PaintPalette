@@ -78,7 +78,7 @@ body {
 .brush {
   background-color: rgb(114, 114, 114);
   height: 44px;
-  width: 345px;
+  width: auto;
 }
 
 .brush > * {
@@ -132,17 +132,7 @@ body {
   background: rgb(47, 47, 47);
 }
 
-/* JS Color
-.jscolor {
-  border-style: solid;
-  border-radius: 5px;
-  height: 35px;
-  width: 120px;
-  margin-left: 3px;
-  text-align: center;
-  cursor: pointer;
-  outline: none;
-} */
+
 
 /* Canvas */
 canvas#canvas {
@@ -158,18 +148,25 @@ canvas#canvas {
   display: none;
 }
 
-/* Media Query: Mobile Devices */
 @media screen and (max-width: 800px) {
-  .mobile-message {
-    position: absolute;
-    height: 100vh;
-    width: 100%;
-    background-color: rgb(0, 0, 0);
-    color: white;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    text-align: center;
-    z-index: 100;
+  .top-bar {
+    width: 70px; /* Set the width of the vertical bar */
+    height: 100vh; /* Make the vertical bar cover the entire viewport height */
+    flex-direction: column; /* Arrange items vertically */
+    justify-content: flex-start; /* Align items at the top */
+    position: fixed; /* Fix the position to the left side */
+    left: 0; /* Position it at the left edge */
+    top: 0; /* Position it at the top */
+    background-color: grey; /* Retain the background color */
+    z-index: 100; /* Set a higher z-index to keep it above the canvas */
   }
+  .top-bar > div{
+    margin-top: 10px;
+    margin-bottom: 10px;
+  }
+  
+  /* Update styles for individual tool divs, e.g., .brush, .bucket, etc. */
+
+  /* Adjust other styles as needed for the new layout */
 }
+
