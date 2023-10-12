@@ -13,7 +13,7 @@ const downloadBtn = document.getElementById('download')
 const { body } = document
 
 // Global Variables
-const canvas = document.createElement('canvas')
+const canvas = document.createElement('canvas') //  creates a rectangualr interactable area
 canvas.id = 'canvas'
 const context = canvas.getContext('2d')
 let currentSize = 10
@@ -34,19 +34,19 @@ function displayBrushSize() {
 
 // Setting Brush Size
 brushSlider.addEventListener('change', () => {
-  currentSize = brushSlider.value
+  currentSize = brushSlider.value //assign value
   displayBrushSize()
 })
 
 // Setting Brush Color
 brushColorBtn.addEventListener('change', () => {
   isEraser = false
-  currentColor = brushColorBtn.value
+  currentColor = brushColorBtn.value //assign value
 })
 
 // Setting Background Color
 bucketColorBtn.addEventListener('change', () => {
-  bucketColor = bucketColorBtn.value
+  bucketColor = bucketColorBtn.value //assign value
   createCanvas()
   restoreCanvas()
 })
@@ -75,10 +75,13 @@ function switchToBrush() {
 
 // Create Canvas
 function createCanvas() {
+  // Set dimensions
   canvas.width = window.innerWidth
   canvas.height = window.innerHeight - 50
+  // add background color
   context.fillStyle = bucketColor
   context.fillRect(0, 0, canvas.width, canvas.height)
+  // append to body
   body.appendChild(canvas)
   switchToBrush()
 }
@@ -86,6 +89,7 @@ function createCanvas() {
 // Clear Canvas
 clearCanvasBtn.addEventListener('click', () => {
   createCanvas()
+  console.log(drawnArray)
   drawnArray = []
   // Active Tool
   activeToolEl.textContent = 'Canvas Cleared'
@@ -98,7 +102,7 @@ function restoreCanvas() {
     context.beginPath()
     context.moveTo(drawnArray[i - 1].x, drawnArray[i - 1].y)
     context.lineWidth = drawnArray[i].size
-    context.lineCap = 'round'
+    context.lineCap = 'round' // type of stroke
     if (drawnArray[i].eraser) {
       context.strokeStyle = bucketColor
     } else {
@@ -130,7 +134,7 @@ function getMousePosition(event) {
   }
 }
 
-// Mouse Down
+// Mouse CLICKHOLD
 canvas.addEventListener('mousedown', (event) => {
   isMouseDown = true
   const currentPosition = getMousePosition(event)

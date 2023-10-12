@@ -143,11 +143,6 @@ canvas#canvas {
   z-index: 10;
 }
 
-/* Mobile Message */
-.mobile-message {
-  display: none;
-}
-
 @media screen and (max-width: 800px) {
   .top-bar {
     width: 70px; /* Set the width of the vertical bar */
